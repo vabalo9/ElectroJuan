@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+
+
+
+* {
+  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(49, 47, 47); 
+  }
+
+  
+  .navbar {
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    color: beige;
+    justify-content: space-between;
+    padding-inline: 30px;
+    padding-block: 25px;
+    align-items: center;
+    background-color: rgb(17, 209, 181);
+    
+  }
+
+  .logo {
+    background-color: rgb(17, 209, 181);
+    font-size: 40px;
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .logo2 {
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .nav-items {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(17, 209, 181);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .items {
+    font-size: 25px;
+    background-color: rgb(17, 209, 181);
+  }
+
+  .boton-menu {
+     background-color: rgb(17, 209, 181); 
+    border: 0;
+    color: beige;
+    font-size: 3rem;
+    display: flex;
+    gap: 5px;
+  }
+
+  .bi {
+    background-color: rgb(17, 209, 181);
+  }
+  .number {
+    background-color: beige;
+    color:rgb(17, 209, 181);
+    padding: .15rem .25rem;
+    border-radius: 0.25rem;
+  }
+
+  .container {
+    background-color: rgb(49, 47, 47);
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    color: beige;
+    padding-top: 30px;
+  }
+
+  .titulo-productos {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    font-size: 40px;
+    color: rgb(17, 209, 181);
+  }
+
+  .titulo-productos::last-word {
+    font-family: 'Roboto Slab', serif;
+  }
+
+  .container-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 40px;
+    padding-inline: 30px;
+   }
+
+   .card-heading {
+    color: rgb(17, 209, 181);
+   }
+
+   .card-text {
+    color: white;
+   }
+
+   .card-price {
+    color: rgb(17, 209, 181);
+   }
+
+   
+   .css-1mcat1a {
+    background:rgb(17, 209, 181)!important;
+   }
+  
+   .css-1yctz6j {
+    color:rgb(17, 209, 181)!important ;
+   }
