@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
-
+:root {
+  --principal-bg-color: rgb(17, 209, 181);
+  --color-fondo:rgb(49, 47, 47)
+}
 
 * {
   padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: rgb(49, 47, 47); 
+    background-color: var(--color-fondo); 
   }
 
   
@@ -19,12 +22,11 @@
     padding-inline: 30px;
     padding-block: 25px;
     align-items: center;
-    background-color: rgb(17, 209, 181);
-    
-  }
+    background-color: var(--principal-bg-color);
+    }
 
   .logo {
-    background-color: rgb(17, 209, 181);
+    background-color: var(--principal-bg-color);
     font-size: 40px;
     font-family: 'Roboto Slab', serif;
   }
@@ -37,18 +39,18 @@
     list-style-type: none;
     display: flex;
     gap: 1rem;
-    background-color: rgb(17, 209, 181);
+    background-color: var(--principal-bg-color);
     font-weight: 600;
     cursor: pointer;
   }
 
   .items {
     font-size: 25px;
-    background-color: rgb(17, 209, 181);
+    background-color: var(--principal-bg-color);
   }
 
   .boton-menu {
-     background-color: rgb(17, 209, 181); 
+     background-color: var(--principal-bg-color); 
     border: 0;
     color: beige;
     font-size: 3rem;
@@ -57,11 +59,11 @@
   }
 
   .bi {
-    background-color: rgb(17, 209, 181);
+    background-color: var(--principal-bg-color);
   }
   .number {
     background-color: beige;
-    color:rgb(17, 209, 181);
+    color:var(--principal-bg-color);
     padding: .15rem .25rem;
     border-radius: 0.25rem;
   }
@@ -80,12 +82,9 @@
     justify-content: center;
     padding-top: 30px;
     font-size: 40px;
-    color: rgb(17, 209, 181);
+    color: var(--principal-bg-color);
   }
 
-  .titulo-productos::last-word {
-    font-family: 'Roboto Slab', serif;
-  }
 
   .container-products {
     display: grid;
@@ -95,7 +94,7 @@
    }
 
    .card-heading {
-    color: rgb(17, 209, 181);
+    color: var(--principal-bg-color);
    }
 
    .card-text {
@@ -103,14 +102,14 @@
    }
 
    .card-price {
-    color: rgb(17, 209, 181);
+    color: var(--principal-bg-color);
    }
 
    
    .css-1mcat1a {
-    background:rgb(17, 209, 181)!important;
+    background:var(--principal-bg-color)!important;
    }
   
    .css-1yctz6j {
-    color:rgb(17, 209, 181)!important ;
+    color:var(--principal-bg-color)!important ;
    }
