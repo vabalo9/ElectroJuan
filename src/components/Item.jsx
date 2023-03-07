@@ -1,7 +1,8 @@
 import {Card, CardBody, Image, Stack, Heading, Text, Divider, Button, ButtonGroup,  CardFooter } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+
 
 const Item = ({id, imagen, descripcion, precio, nombre}) => { 
-
   return (
     <>
     <Card key={id} maxW='sm'>
@@ -25,7 +26,7 @@ const Item = ({id, imagen, descripcion, precio, nombre}) => {
       <CardFooter>
         <ButtonGroup spacing='2'>
           <Button variant='solid' className="card-button">
-            Comprar ahora
+            <Link to={`/product/${id}`}>Ver mas detalles</Link>
           </Button>
           <Button variant='ghost' className="card-button2">
             Añadir al carrito 
