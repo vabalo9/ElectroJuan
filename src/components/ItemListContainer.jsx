@@ -3,7 +3,7 @@ import Data from "../data.json"
 import ItemList from "./ItemList";
 import {useState} from "react";
 import { useParams } from "react-router-dom";
-import ProductDetail from "./ProductDetail";
+
 
 const ItemListContainer = () => {
 
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
   
   const catFilter = productos.filter((producto) => producto.categoria === categoria);
   
-  <ProductDetail productos={productos}/>
+
   
     return <>
       <h3 className="titulo-productos">{categoria}</h3>

@@ -5,13 +5,13 @@ import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Cart from './components/Cart'
-import ProductDetail from './components/ProductDetail'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import Welcome from './components/Welcome'
-import Data from "./data.json"
+
 
 
 function App()  {
-  console.log(Data)
+  
     return (  
       <>
       <ChakraProvider> 
@@ -21,8 +21,8 @@ function App()  {
     <Routes>
       < Route exact path="/" element={<Welcome greeting={"Bienvenidos a"} />} />
       < Route exact path="/cart" element={<Cart />} />
-      < Route exact path="product/:id" element={<ProductDetail />} />
-      <Route exact path='/categoria/:categoria' element={<ItemListContainer Data={Data} />} />
+      < Route exact path="product/:id" element={<ItemDetailContainer />} />
+      <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
       </Routes>
 
     <Footer />
