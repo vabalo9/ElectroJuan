@@ -2,11 +2,13 @@ import React from "react";
 import Data from "../data.json"
 import ItemList from "./ItemList";
 import {useState} from "react";
+import { useParams } from "react-router-dom";
+import ProductDetail from "./ProductDetail";
 
-
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
+  const { categoria } = useParams();
 
   const pedirProductos = () => {
     return new Promise((resolve) => {
@@ -22,19 +24,13 @@ const ItemListContainer = ({greeting}) => {
       setProductos(res)
   })
   
+  const catFilter = productos.filter((producto) => producto.categoria === categoria);
+  
+  <ProductDetail productos={productos}/>
+  
     return <>
-   
-    <div className="container">
-        {greeting}
-        <span className="logo2">&nbsp;TecnoJuan</span>
-    </div>
-    
-    <h3 className="titulo-productos">Nuestros productos mas comprados</h3>
-    
-    
-      < ItemList
-      productos={productos}
-      />
+      <h3 className="titulo-productos">{categoria}</h3>
+      {categoria ? <ItemList productos={catFilter} /> : <ItemList productos={productos} />}
    
     </>
 }

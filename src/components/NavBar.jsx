@@ -8,10 +8,16 @@ const NavBar = () => {
             <h1 className="logo">TecnoJuan</h1>
             </Link>
             <ul className="nav-items">
-                <li className="items">Tablets</li>
-                <li className="items">Celulares</li>
+            <Link to={`/categoria/${"Smartphones"}`}>
+                <li className="items">Smartphones</li>
+            </Link>
+            <Link to={`/categoria/${"Notebooks"}`}>
                 <li className="items">Notebooks</li>
-                <li className="items">Pcs</li>
+            </Link> 
+            <Link to={`/categoria/${"Watches"}`}> 
+                <li className="items">Watches</li>
+            </Link> 
+
             </ul>
              <CardWidget /> 
         </div>
