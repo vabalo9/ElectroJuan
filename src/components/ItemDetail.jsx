@@ -1,48 +1,27 @@
 import React from 'react'
-import {Card, CardBody, Image, Stack, Heading, Text, Divider, Button, ButtonGroup,  CardFooter } from '@chakra-ui/react'
+import ItemCount from "./ItemCount";
 
-const ItemDetail = (id, imagen, descripcion, precio, nombre) => {
-    console.log(precio)
+const ItemDetail = ({id, imagen, descripcion, precio, nombre, stock}) => {
+  
   return (
     <>
 
 
-        {/* <div key={id}>
-            <h1>{nombre}</h1>
-            <h3>{precio}</h3>
-            <p>{descripcion}</p>
-        </div> */}
-
-
-<Card key={id} maxW='sm'>
-      <CardBody>
-        <Image
-          src={imagen}
-          alt='Green double couch with wooden legs'
-          borderRadius='lg'
-        />
-        <Stack mt='6' spacing='3'>
-          <Heading className="card-heading" size='md'>{nombre}</Heading>
-          <Text className="card-text">
-          {descripcion}
-          </Text>
-          <Text className="card-price" fontSize='2xl'>
-            ${precio}
-          </Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <ButtonGroup spacing='2'>
-          <Button variant='solid' className="card-button">
-            Ver mas detalles    
-          </Button>
-          <Button variant='ghost' className="card-button2">
-            Añadir al carrito 
-          </Button>
-        </ButtonGroup>
-      </CardFooter>
-    </Card>
+        <div key={id}>
+          
+          <div className='contenido-ItemDetail'>
+                <img className='imagen-itemDetail' src={imagen} />  
+              
+                <div className='texto-ItemDetail'>
+                  <div className='texto-ItemDetail2'>
+                    <h1 className='titulo-ItemDetail'>{nombre}</h1>
+                    <p className='descripcion-ItemDetail'>{descripcion}</p>
+                  </div>
+                  <h3 className='precio-ItemDetail'>${precio}</h3>
+                  < ItemCount stock={stock} />
+                </div>
+          </div>
+        </div>
     </>
   )
 }

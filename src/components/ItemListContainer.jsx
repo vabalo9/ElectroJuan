@@ -1,7 +1,7 @@
 import React from "react";
 import Data from "../data.json"
 import ItemList from "./ItemList";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 
 
@@ -23,6 +23,10 @@ const ItemListContainer = () => {
     .then((res) =>{
       setProductos(res)
   })
+
+  useEffect(()=>{
+    productos
+  },[]);
   
   const catFilter = productos.filter((producto) => producto.categoria === categoria);
   

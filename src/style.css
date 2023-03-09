@@ -61,6 +61,7 @@
   .bi {
     background-color: var(--principal-bg-color);
   }
+  
   .number {
     background-color: beige;
     color:var(--principal-bg-color);
@@ -112,4 +113,132 @@
   
    .css-1yctz6j {
     color:var(--principal-bg-color)!important ;
+   }
+
+   .titulo-ItemDetail {
+    font-size: 50px;
+    color: var(--principal-bg-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+   }
+
+   .contenido-ItemDetail {
+    display: flex;
+    padding: 30px;
+    padding-top: 70px;
+    padding-inline: 80px;
+   }
+
+   .descripcion-ItemDetail {
+    color: white;
+    padding-inline: 80px;
+   }
+
+   .precio-ItemDetail {
+    color:var(--principal-bg-color);
+    font-size: 50px;
+    padding-inline: 80px;
+   }
+
+   .imagen-itemDetail {
+    border-radius: 30px;
+    max-width: 700px;
+   }
+
+   .texto-ItemDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   }
+
+   .texto-ItemDetail2{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+
+   .div-contador {
+    display: flex;
+    padding-inline: 80px;
+    gap:100px;
+    
+   }
+
+   .botones-contador {
+    display: flex;
+    gap: 25px;
+   }
+
+ 
+
+   .bi-dash-circle-fill {
+    font-size: 45px;
+    color: var(--principal-bg-color);
+    background-color: transparent;
+    border: transparent solid;
+   }
+
+   .bi-plus-circle-fill {
+    font-size: 45px;
+    color: var(--principal-bg-color);
+    background-color: transparent;
+    border: transparent solid;
+   }
+
+   .contador-titulo {
+    font-size: 45px;
+    color: aliceblue;
+   }
+
+   .boton-comprador {
+    background-color:var(--principal-bg-color);
+    border-radius: 45px;
+    font-size: 25px;
+    width: 250px;
+   }
+
+   .footer {
+    background-color: var(--principal-bg-color);
+    color: white;
+   }
+
+   .principal {
+    display: flex;
+    padding-inline: 50px;
+    justify-content: space-between;
+    padding-block: 30px;
+    margin-top: 90px;
+    bottom: 0;
+    position: relative;
+    width: 100%;
+   }
+
+   .lista {
+    list-style-type: none;
+   }
+
+   .titulos-footer {
+    font-size: 30px;
+   }
+
+   .enlaces {
+    font-size: 18px;
+    cursor: pointer;
+   }
+
+   .enlaces:hover {
+    text-decoration: underline;
+   }
+
+   .centro {
+    font-size: 30px;
+   }
+
+   .horario {
+    font-size: 25px;
+   }
+
+   .numero {
+    font-size: 40px;
    }
