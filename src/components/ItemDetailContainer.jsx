@@ -1,22 +1,40 @@
 import { useParams } from "react-router-dom";
-import { useEffect} from "react";
+import { useState, useEffect} from "react";
 import Data from "../data.json"
 import ItemDetail from "./ItemDetail";
 
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const [producto, setProducto] = useState([])
+
+
 
   useEffect(()=>{
-    Data
-  },[]);
-
-const productoFilter = Data.filter((prod) => prod.id == id);
+    const pedirProductos = () => {
+      return new Promise((resolve) => {
+        setTimeout (()=>{
+          resolve(Data);
   
+          }, 1000);
+      });
+    };
+    
+    pedirProductos()
+      .then((res) =>{
+       setProducto(res.filter((prod) => prod.id == id))
+        
+    })
+    
+    },[]);
+    
+   
+
   return (
     <>
-
-{  productoFilter.map((prod)=>{
+  
+  
+  {  producto.map((prod)=>{
   return (
     <ItemDetail
     key={prod.id}

@@ -10,31 +10,28 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const { categoria } = useParams();
 
+  useEffect(()=>{
   const pedirProductos = () => {
     return new Promise((resolve) => {
       setTimeout (()=>{
         resolve(Data);
 
-        }, 3000);
+        }, 1000);
     });
   };
-
+  
   pedirProductos()
     .then((res) =>{
-      setProductos(res)
+      categoria
+      ? setProductos(res.filter((producto) => producto.categoria === categoria))
+      : setProductos(res);
   })
-
-  useEffect(()=>{
-    productos
+  
   },[]);
-  
-  const catFilter = productos.filter((producto) => producto.categoria === categoria);
-  
 
-  
-    return <>
+return <>
       <h3 className="titulo-productos">{categoria}</h3>
-      {categoria ? <ItemList productos={catFilter} /> : <ItemList productos={productos} />}
+      {<ItemList productos={productos} />}
    
     </>
 }

@@ -21,9 +21,9 @@ const restando = () => {
 }
 
 const comprado = () => {
-  // setState(state = 1);
+  
   alert("tus productos se añadieron al carrito");
-  setState(state = 1)
+  
 }
     
   return (
