@@ -1,7 +1,14 @@
 import CardWidget from "./CardWidget";
 import { Link } from 'react-router-dom'
+import {CartContext} from '../context/ShoppingCartProvider'
+import { useContext } from "react";
+
 
 const NavBar = () => {
+const {cart}= useContext(CartContext)
+console.log(cart)
+    
+
     return (
         <div className="navbar">
             <Link to={`/`}>

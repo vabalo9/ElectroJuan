@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
+import ShoppingCartProvider from '../context/ShoppingCartProvider'
 
 
-const Contador = ({stock}) => {
+const Contador = ({id, imagen, precio, nombre, stock}) => {
 const [state, setState]= useState(1)
 
+const [articulo, setArticulo] = useState()
 
 const sumando = () => {
   if (state < stock) {
@@ -20,14 +22,25 @@ const restando = () => {
   }
 }
 
+
 const comprado = () => {
   
   alert("tus productos se añadieron al carrito");
-  
+  setState( 1 )
+
+
+  const compra={
+   id:id, nombre:nombre, imagen:imagen, precio:precio, unidades:state  
+ }
+ setArticulo(compra) 
 }
-    
-  return (
-    <>
+
+
+ <ShoppingCartProvider articulo={articulo}/>
+
+console.log(articulo)
+return (
+  <>
       <div className='div-contador' >
         <div className='botones-contador'>
           <button className='boton-contador' onClick={restando}><i className="bi bi-dash-circle-fill"></i></button> 

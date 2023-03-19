@@ -27,7 +27,7 @@ const ItemListContainer = () => {
       : setProductos(res);
   })
   
-  },[]);
+  },[categoria]);
 
 return <>
       <h3 className="titulo-productos">{categoria}</h3>

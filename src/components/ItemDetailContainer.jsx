@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
     
     pedirProductos()
       .then((res) =>{
-       setProducto(res.filter((prod) => prod.id == id))
+       setProducto(res.find((prod) => prod.id == id))
         
     })
     
@@ -32,24 +32,15 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-  
-  
-  {  producto.map((prod)=>{
-  return (
     <ItemDetail
-    key={prod.id}
-    id={prod.id}
-    nombre={prod.nombre}
-    descripcion={prod.descripcion}
-    imagen={prod.imagen}
-    precio={prod.precio}
-    stock={prod.stock}
+    key={producto.id}
+    id={producto.id}
+    nombre={producto.nombre}
+    descripcion={producto.descripcion}
+    imagen={producto.imagen}
+    precio={producto.precio}
+    stock={producto.stock}
     />
-    
-    
-  )
-})  } 
-  
     </>
   )
 }

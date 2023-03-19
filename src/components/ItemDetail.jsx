@@ -18,7 +18,15 @@ const ItemDetail = ({ id, imagen, descripcion, precio, nombre, stock}) => {
                     <p className='descripcion-ItemDetail'>{descripcion}</p>
                   </div>
                   <h3 className='precio-ItemDetail'>${precio}</h3>
-                  < ItemCount stock={stock} />
+                  < ItemCount 
+                      
+                      id={id}
+                      nombre={nombre}
+                      descripcion={descripcion}
+                      imagen={imagen}
+                      precio={precio}
+                      stock={stock}
+                      />
                 </div>
           </div>
         </div>

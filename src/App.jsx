@@ -1,3 +1,4 @@
+import ShoppingCartProvider from './context/ShoppingCartProvider'
 import { ChakraProvider } from '@chakra-ui/react'
 import './style.css'
 import { Routes, Route } from 'react-router-dom'
@@ -7,16 +8,21 @@ import Footer from './components/Footer'
 import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Welcome from './components/Welcome'
+import Carrito from './components/Carrito'
 
 
 
 function App()  {
+
+  
   
     return (  
       <>
+      <ShoppingCartProvider>
       <ChakraProvider> 
 
     <NavBar/>
+
 
     <Routes>
       < Route exact path="/" element={<Welcome greeting={"Bienvenidos a"} />} />
@@ -26,8 +32,8 @@ function App()  {
       </Routes>
 
     <Footer />
-
      </ChakraProvider>
+     </ShoppingCartProvider> 
     </>
   )
 } 
