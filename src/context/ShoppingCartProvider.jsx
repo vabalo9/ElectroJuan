@@ -34,13 +34,22 @@ const ShoppingCartProvider = ({ children }) => {
   
   const cantidad = carrito.reduce((acc, producto) => acc + producto.unidades, 0)
 
-  function sumarEnCarrito(dato) {
-    // if (cantidad < stock) {
-    //   carrito.cantidad + 1
-    console.log(dato)
+  function sumarEnCarrito(id, stock) {
+    let posicionProducto = carrito.findIndex(producto => producto.id == id)
+    let producto = carrito.find(producto => producto.id == id)
+    console.log("la cantidad de es de " + producto.unidades)
+    console.log("el stock es de " + stock)
 
-    console.log("no hay nada mas rico y peligroso que la cocacola")
+    if (producto.unidades < stock) {
+
+
+      carrito[posicionProducto] = {
+        id: carrito[posicionProducto].id, img: carrito[posicionProducto].img, nombre: carrito[posicionProducto].nombre, precio: carrito[posicionProducto].precio, unidades: carrito[posicionProducto].unidades + 1, total: carrito[posicionProducto].precio * (carrito[posicionProducto].unidades + 1)
+      }
+      
     }
+    console.log(carrito[posicionProducto])
+  }
 
   
 

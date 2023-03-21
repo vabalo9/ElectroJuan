@@ -5,6 +5,7 @@ import {CartContext} from '../context/ShoppingCartProvider'
 const Cart = () => {
   const {carrito, cantidad, sumarEnCarrito} = useContext(CartContext);
   return (
+      
     <div>
       <h1>Tus productos</h1>
         {  carrito.map((prod)=>{
@@ -19,7 +20,7 @@ const Cart = () => {
           <h4 className='color'>Valor total: ${prod.total}</h4>
         </div>
         <div className='botones-carrito'>
-          <button className='boton-contador' id={prod.id} onClick={()=> sumarEnCarrito({id})}><i className="bi bi-plus-lg"></i></button> 
+          <button className='boton-contador' id={prod.id} onClick={()=> sumarEnCarrito(prod.id, prod.stock)}><i className="bi bi-plus-lg"></i></button> 
           <button className='boton-contador'><i className="bi bi-trash"></i></button>
           <button className='boton-contador'><i className="bi bi-dash"></i></button> 
         </div>
