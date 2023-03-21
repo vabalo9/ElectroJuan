@@ -58,7 +58,7 @@
     gap: 5px;
   }
 
-  .bi {
+  .bi-cart3 {
     background-color: var(--principal-bg-color);
   }
   
@@ -179,7 +179,7 @@
     border: transparent solid;
    }
 
-   .bi-plus-circle-fill {
+   .suma-itemcount {
     font-size: 45px;
     color: var(--principal-bg-color);
     background-color: transparent;
@@ -241,4 +241,67 @@
 
    .numero {
     font-size: 40px;
+   }
+
+
+
+   .imagen-carrito {
+    max-width: 25%;
+    
+   }
+
+   .div-carrito {
+    background-color:var(--principal-bg-color);
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    padding: 30px;
+    border-radius: 30px;
+
+   }
+
+   .color {
+    background-color:var(--principal-bg-color);
+   }
+
+   .botones-carrito {
+    background-color:var(--principal-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+
+   .bi-plus-lg {
+    background-color:var(--principal-bg-color);
+    font-size: 30px;
+   }
+
+   .bi-dash {
+    background-color:var(--principal-bg-color);
+    font-size: 30px;
+   }
+
+   .bi-trash {
+    background-color:var(--principal-bg-color);
+    font-size: 30px;
+   }
+ 
+   .palabras-iconos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color:var(--principal-bg-color);
+   }
+
+   .contenido-cart {
+    background-color:var(--principal-bg-color);
+    display: flex ;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+   }
+
+   .titulo-producto-carrito {
+    font-size: 35px;
+    font-family: 'Roboto Slab', serif;
    }

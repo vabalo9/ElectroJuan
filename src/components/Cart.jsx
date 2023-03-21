@@ -1,21 +1,32 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {CartContext} from '../context/ShoppingCartProvider'
 
 
 const Cart = () => {
-  const {carrito, cantidad} = useContext(CartContext);
+  const {carrito, cantidad, sumarEnCarrito} = useContext(CartContext);
   return (
     <div>
+      <h1>Tus productos</h1>
         {  carrito.map((prod)=>{
+          
   return (
-  
-    <idv key={prod.id}>
-    <h1>{prod.nombre}</h1>
-    <h1>{prod.descripcion}</h1>
-    <h1>Precio: ${prod.precio}</h1>
-    <h1>Cantidad: {prod.unidades}</h1>
-    <h1>Valor total: ${prod.total}</h1>
-    </idv>
+    
+    <div className='div-carrito' key={prod.id}>
+      <div className='palabras-iconos'>
+        <div className='contenido-cart'>
+          <h1 className='color'>Cantidad: {prod.unidades}</h1>
+          <h1 className='color'>Precio: ${prod.precio}</h1>
+          <h4 className='color'>Valor total: ${prod.total}</h4>
+        </div>
+        <div className='botones-carrito'>
+          <button className='boton-contador' id={prod.id} onClick={()=> sumarEnCarrito({id})}><i className="bi bi-plus-lg"></i></button> 
+          <button className='boton-contador'><i className="bi bi-trash"></i></button>
+          <button className='boton-contador'><i className="bi bi-dash"></i></button> 
+        </div>
+      </div>
+      <h1 className='color titulo-producto-carrito'>{prod.nombre}</h1>
+      <img className='imagen-carrito' src={prod.img} />  
+    </div>
     )
 })  } 
 
