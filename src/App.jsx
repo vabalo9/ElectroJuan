@@ -1,4 +1,3 @@
-import ShoppingCartProvider from './context/ShoppingCartProvider'
 import { ChakraProvider } from '@chakra-ui/react'
 import './style.css'
 import { Routes, Route } from 'react-router-dom'
@@ -8,32 +7,33 @@ import Footer from './components/Footer'
 import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Welcome from './components/Welcome'
-import Carrito from './components/Carrito'
+import {CartContext} from './context/ShoppingCartProvider'
+import { useContext } from "react";
+import CarritoVacio from './components/CarritoVacio'
+
 
 
 
 function App()  {
-
+   const {carrito}= useContext(CartContext) 
   
-  
-    return (  
-      <>
-      <ShoppingCartProvider>
+  return (  
+    <>
+      
       <ChakraProvider> 
-
     <NavBar/>
 
 
     <Routes>
       < Route exact path="/" element={<Welcome greeting={"Bienvenidos a"} />} />
-      < Route exact path="/cart" element={<Cart />} />
+      < Route exact path="/cart" element={carrito.length !=0 ? <Cart /> : <CarritoVacio/>} />
       < Route exact path="product/:id" element={<ItemDetailContainer />} />
       <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
       </Routes>
 
     <Footer />
      </ChakraProvider>
-     </ShoppingCartProvider> 
+      
     </>
   )
 } 

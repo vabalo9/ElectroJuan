@@ -1,9 +1,9 @@
 import React from 'react'
+import Example from './ComponenteDeEspera'
 import ItemListContainer from './ItemListContainer'
 
 const Welcome = ({greeting}) => {
   return <>
-  
    
   <div className="container">
         {greeting}
@@ -11,7 +11,7 @@ const Welcome = ({greeting}) => {
     </div>
     
     <h3 className="titulo-productos">Nuestros productos mas comprados</h3>
-    < ItemListContainer />
+     < ItemListContainer /> 
   </>
     
   

@@ -1,12 +1,15 @@
+import React from 'react'
 import { useParams } from "react-router-dom";
 import { useState, useEffect} from "react";
 import Data from "../data.json"
 import ItemDetail from "./ItemDetail";
+import Example from './ComponenteDeEspera'
 
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState([])
+  const[espera, setEspera] = useState(true)
 
 
 
@@ -14,6 +17,7 @@ const ItemDetailContainer = () => {
     const pedirProductos = () => {
       return new Promise((resolve) => {
         setTimeout (()=>{
+          setEspera(false)
           resolve(Data);
   
           }, 1000);
@@ -28,7 +32,9 @@ const ItemDetailContainer = () => {
     
     },[]);
     
-   
+   if (espera) {
+    return <Example />
+   }
 
   return (
     <>
@@ -46,4 +52,4 @@ const ItemDetailContainer = () => {
 }
 
 
-export default ItemDetailContainer
+export default React.memo(ItemDetailContainer)

@@ -3,11 +3,11 @@ import {CartContext} from '../context/ShoppingCartProvider'
 
 
 const Cart = () => {
-  const {carrito, cantidad, sumarEnCarrito, restarEnCarrito, eliminarProducto} = useContext(CartContext);
+  const {carrito, cantidad, sumarEnCarrito, restarEnCarrito, eliminarProducto, totales} = useContext(CartContext);
   return (
       
     <div>
-      <h1>Tus productos</h1>
+      <h1 className='titulo-carrito'>Tus productos</h1>
         {  carrito.map((prod)=>{
           
   return (
@@ -30,8 +30,10 @@ const Cart = () => {
     </div>
     )
 })  } 
-
-  <h4>Cantidad de productos: {cantidad}</h4>
+  <div className='totales'>
+    <h4 className='cantidad-carrito'>Cantidad de productos: {cantidad}</h4>
+    <h4 className='cantidad-carrito'> Total: $ {totales}</h4>
+  </div>
     </div>
   )
 }
