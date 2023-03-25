@@ -1,37 +1,35 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import { useState, useEffect} from "react";
-import Data from "../data.json"
 import ItemDetail from "./ItemDetail";
 import Example from './ComponenteDeEspera'
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [producto, setProducto] = useState([])
+  const [productos, setProductos] = useState([])
   const[espera, setEspera] = useState(true)
 
 
+  useEffect(() =>{
+    const db = getFirestore();
+    const itemsCollection = collection(db, "tecnologia");
+    getDocs(itemsCollection).then((snapshot)=>{ 
+    const productos = snapshot.docs.map((doc)=>({
+    ...doc.data(),
+    id: doc.id,
+    }))
+    setProductos(productos.find((prod) => prod.id == id));
+    setEspera(false);
+  });
+}, [])
 
-  useEffect(()=>{
-    const pedirProductos = () => {
-      return new Promise((resolve) => {
-        setTimeout (()=>{
-          setEspera(false)
-          resolve(Data);
+useEffect(() =>{
+  productos
+});
+
   
-          }, 1000);
-      });
-    };
-    
-    pedirProductos()
-      .then((res) =>{
-       setProducto(res.find((prod) => prod.id == id))
-        
-    })
-    
-    },[]);
-    
    if (espera) {
     return <Example />
    }
@@ -39,13 +37,13 @@ const ItemDetailContainer = () => {
   return (
     <>
     <ItemDetail
-    key={producto.id}
-    id={producto.id}
-    nombre={producto.nombre}
-    descripcion={producto.descripcion}
-    imagen={producto.imagen}
-    precio={producto.precio}
-    stock={producto.stock}
+    key={productos.id}
+    id={productos.id}
+    nombre={productos.nombre}
+    descripcion={productos.descripcion}
+    imagen={productos.imagen}
+    precio={productos.precio}
+    stock={productos.stock}
     />
     </>
   )

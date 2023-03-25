@@ -1,9 +1,9 @@
 import React from "react";
-import Data from "../data.json"
 import ItemList from "./ItemList";
 import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Example from './ComponenteDeEspera'
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
 
 const ItemListContainer = () => {
@@ -12,25 +12,26 @@ const ItemListContainer = () => {
   const[espera, setEspera] = useState(true)
   const { categoria } = useParams();
 
-  useEffect(()=>{
-  const pedirProductos = () => {
-    return new Promise((resolve) => {
-      setTimeout (()=>{
-        setEspera(false)
-        resolve(Data);
 
-        }, 5000);
-    });
-  };
-  
-  pedirProductos()
-    .then((res) =>{
-      categoria
-      ? setProductos(res.filter((producto) => producto.categoria === categoria))
-      : setProductos(res);
-  })
-  
-  },[categoria]);
+
+    useEffect(() =>{
+        const db = getFirestore();
+        const itemsCollection = collection(db, "tecnologia");
+        getDocs(itemsCollection).then((snapshot)=>{ 
+        const productos = snapshot.docs.map((doc)=>({
+        ...doc.data(),
+        id: doc.id,
+        }))
+        setProductos(productos);
+        setEspera(false);
+      });
+    }, [])
+
+    const filtrado= productos.filter((producto)=>producto.categoria===categoria)
+
+
+
+    
 
   if (espera) {
     return <Example />
@@ -38,7 +39,7 @@ const ItemListContainer = () => {
 
 return <>
       <h3 className="titulo-productos">{categoria}</h3>
-      {<ItemList productos={productos} />}
+      {categoria ? <ItemList productos={filtrado} /> : <ItemList productos={productos} />}
    
     </>
 }
