@@ -192,7 +192,9 @@
    }
 
    .boton-comprador {
-    background-color:var(--principal-bg-color);
+    color:var(--principal-bg-color) ;
+    border: 1px solid var(--principal-bg-color);
+    background-color: var(--color-fondo);
     border-radius: 45px;
     font-size: 25px;
     width: 250px;
@@ -350,4 +352,73 @@
    .skeleton {
     margin-top: 40px;
     margin-inline: 80px;
+   }
+
+   .form-register {
+    width: 400px;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-family: calibri;
+    color: white;
+   }
+
+
+
+   .register {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid var(--principal-bg-color);
+    font-size: 18px;
+    outline: none
+   }
+
+  
+
+   .boton-finalizador {
+    border-radius: 4px;
+    font-size: 25px;
+    width: 100%;
+    padding: 10px;
+    color:var(--principal-bg-color) ;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--principal-bg-color);
+
+   }
+
+
+   .boton-nexo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 4px;
+     margin-inline: 500px;
+     margin-top: 50px;
+     font-size: 25px;
+     width: 500px;
+     padding: 10px;
+     color:var(--principal-bg-color) ;
+     background-color: var(--color-fondo);
+     border: 1px solid var(--principal-bg-color);
+    }
+    
+    .efecto:hover {
+     background-color:var(--principal-bg-color);
+     color: var(--color-fondo);
+   }
+
+   .titulo-register {
+    margin-block: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: beige;
+    font-size: 40px;
+   }
+
+   .invisible {
+    display: none;
+
    }

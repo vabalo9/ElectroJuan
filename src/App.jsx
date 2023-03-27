@@ -10,12 +10,18 @@ import Welcome from './components/Welcome'
 import {CartContext} from './context/ShoppingCartProvider'
 import { useContext } from "react";
 import CarritoVacio from './components/CarritoVacio'
-
+import SendOrder from './components/SendOrder'
+import CompraFinalizada from './components/CompraFinalizada'
 
 
 
 function App()  {
-   const {carrito}= useContext(CartContext) 
+  const {carrito, order}= useContext(CartContext) 
+  
+  
+    console.log(order)
+    
+  
   
   return (  
     <>
@@ -27,6 +33,7 @@ function App()  {
     <Routes>
       < Route exact path="/" element={<Welcome greeting={"Bienvenidos a"} />} />
       < Route exact path="/cart" element={carrito.length !=0 ? <Cart /> : <CarritoVacio/>} />
+      <Route exact path='/formulario-de-compra' element={order== true? <CompraFinalizada /> : <SendOrder /> } />
       < Route exact path="product/:id" element={<ItemDetailContainer />} />
       <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
       </Routes>

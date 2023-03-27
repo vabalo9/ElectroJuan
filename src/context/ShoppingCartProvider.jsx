@@ -77,9 +77,17 @@ const ShoppingCartProvider = ({ children }) => {
   const cantidad = carrito.reduce((acc, producto) => acc + producto.unidades, 0)
   const totales = carrito.reduce((acc, producto) => acc + producto.total, 0)
   
-  
+  let order = false;
+
+
+  function finalizar({orderId}) {
+    if (orderId) {
+      return order == orderId
+  }
+}
+
   return (
-    <CartContext.Provider value={{ añadirCarrito, carrito, cantidad, totales, compra, sumarEnCarrito, restarEnCarrito, eliminarProducto}}>
+    <CartContext.Provider value={{ añadirCarrito, carrito, cantidad, totales, compra, sumarEnCarrito, restarEnCarrito, eliminarProducto, finalizar, order}}>
         {children}
         </CartContext.Provider>
     )

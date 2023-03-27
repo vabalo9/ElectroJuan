@@ -28,9 +28,6 @@ const Item = ({id, imagen, descripcion, precio, nombre}) => {
           <Button variant='solid' className="card-button">
             <Link to={`/product/${id}`}>Ver mas detalles</Link>
           </Button>
-          <Button variant='ghost' className="card-button2">
-            Añadir al carrito 
-          </Button>
         </ButtonGroup>
       </CardFooter>
     </Card>
