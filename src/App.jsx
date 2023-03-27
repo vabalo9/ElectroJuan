@@ -16,10 +16,7 @@ import CompraFinalizada from './components/CompraFinalizada'
 
 
 function App()  {
-  const {carrito, order}= useContext(CartContext) 
-  
-  
-    console.log(order)
+  const {carrito}= useContext(CartContext) 
     
   
   
@@ -33,7 +30,7 @@ function App()  {
     <Routes>
       < Route exact path="/" element={<Welcome greeting={"Bienvenidos a"} />} />
       < Route exact path="/cart" element={carrito.length !=0 ? <Cart /> : <CarritoVacio/>} />
-      <Route exact path='/formulario-de-compra' element={order== true? <CompraFinalizada /> : <SendOrder /> } />
+      <Route exact path='/formulario-de-compra' element={<CompraFinalizada />} />
       < Route exact path="product/:id" element={<ItemDetailContainer />} />
       <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
       </Routes>

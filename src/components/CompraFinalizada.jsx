@@ -1,6 +1,7 @@
 import React from 'react'
 
-const CompraFinalizada = () => {
+const CompraFinalizada = ({orderId}) => {
+  console.log(orderId)
   return (
     <div>
       <h1 className='titulo-carrito'>

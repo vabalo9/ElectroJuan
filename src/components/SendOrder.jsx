@@ -31,13 +31,14 @@ const order = {
     items: carrito.map(data =>({id: data.id, nombre: data.nombre , precio: data.precio}))
 }
 
-
+console.log(orderId)
   
   // <CompraFinalizada orderId={orderId} />
 const orderCollection = collection(db, "orden")
 
   return (
     <div>
+{!orderId ? <>
         <p className='titulo-register'>Completa tus datos para poder realizar la compra</p>
         <form className="form-register" onSubmit={handleSubmit}>
             <input className="register" required type="text" placeholder='ingrese su nombre' onChange={(e)=> setNombre(e.target.value)}/>
@@ -47,10 +48,29 @@ const orderCollection = collection(db, "orden")
             <button className="boton-finalizador efecto" type='submit' onClick={()=> finalizar({orderId})}>Realizar compra</button>
             
         </form>
-        <p>Numero de orden {orderId}</p>
+</>
+:<CompraFinalizada orderId={orderId} />}
+        
     </div>
-  )
+  
 
-}
+
+
+
+    // <div>
+    //     <p className='titulo-register'>Completa tus datos para poder realizar la compra</p>
+    //     <form className="form-register" onSubmit={handleSubmit}>
+    //         <input className="register" required type="text" placeholder='ingrese su nombre' onChange={(e)=> setNombre(e.target.value)}/>
+    //         <input className="register" required type="text" placeholder='ingrese su apellido' onChange={(e)=> setApellido(e.target.value)}/>
+    //         <input className="register" required type="number" placeholder='ingrese su telefono' onChange={(e)=> setTelefono(e.target.value)}/>
+    //         <input className="register" required type="email" placeholder='ingrese su email' onChange={(e)=> setEmail(e.target.value)} />
+    //         <button className="boton-finalizador efecto" type='submit' onClick={()=> finalizar({orderId})}>Realizar compra</button>
+            
+    //     </form>
+    //     <p>Numero de orden {orderId}</p>
+    // </div>
+  )}
+
+
 
 export default SendOrder

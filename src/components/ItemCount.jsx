@@ -32,13 +32,13 @@ useEffect(() =>{
 return (
   <>
       <div className='div-contador' >
-        <div className='botones-contador invisible'>
+        <div className={comprado ? 'invisible':'botones-contador'}>
           <button className='boton-contador' onClick={restando}><i className="resta-itemcount bi bi-dash-circle-fill"></i></button> 
            <span className='contador-titulo'>{unidades}</span>
           <button className='boton-contador' onClick={sumando}><i className="suma-itemcount bi bi-plus-circle-fill"></i></button> 
         </div>
 
-          <button className='boton-comprador efecto' onClick={()=> añadirCarrito({id, imagen, precio, nombre, unidades, stock})}>{compra}</button>
+          <button className={comprado ? 'boton-comprado':'boton-comprador efecto'} onClick={()=> añadirCarrito({id, imagen, precio, nombre, unidades, stock})}>{compra}</button>
       </div>
     </>
   )
