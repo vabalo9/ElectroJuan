@@ -434,3 +434,17 @@
     display: none;
 
    }
+
+   .parrafo-final {
+    margin: 100px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+   }
+
+           felicidades has realizado correctamente la compra tu número de seguimiento es <span className='codigo-final'>{orderId}</span>
+.codigo-final{
+    color: var(--principal-bg-color);
+   }
