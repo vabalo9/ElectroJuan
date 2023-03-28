@@ -7,7 +7,7 @@ import CompraFinalizada from "./CompraFinalizada"
 
 
 const SendOrder = () => {
-const {carrito, finalizar } = useContext(CartContext);
+const {carrito, compraFinalizada } = useContext(CartContext);
 const [orderId, setOrderId]= useState(false)
 const [nombre, setNombre] = useState("")
 const [apellido, setApellido] = useState("")
@@ -20,6 +20,7 @@ const handleSubmit=(e)=>{
     e.preventDefault()
     addDoc(orderCollection, order).then(({id})=>
     setOrderId(id))
+    compraFinalizada()
 }
 
 const order = {
@@ -48,7 +49,8 @@ const orderCollection = collection(db, "orden")
             
         </form>
 </>
-:<CompraFinalizada orderId={orderId} />}
+:<CompraFinalizada orderId={orderId}
+  carrito={carrito} />}
         
     </div>
   
