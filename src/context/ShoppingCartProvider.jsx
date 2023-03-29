@@ -78,8 +78,8 @@ const ShoppingCartProvider = ({ children }) => {
   const totales = carrito.reduce((acc, producto) => acc + producto.total, 0)
   
   function compraFinalizada() {
-    carrito.length=0
-    setCarrito([...carrito])
+    
+    setCarrito([])
   }
 
   return (

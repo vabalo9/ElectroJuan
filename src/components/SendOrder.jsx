@@ -18,9 +18,9 @@ const db = getFirestore()
 
 const handleSubmit=(e)=>{
     e.preventDefault()
-    addDoc(orderCollection, order).then(({id})=>
-    setOrderId(id))
-    compraFinalizada()
+    addDoc(orderCollection, order)
+    .then(({id})=> setOrderId(id))
+    .then(() => compraFinalizada())
 }
 
 const order = {
