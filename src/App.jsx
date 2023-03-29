@@ -33,6 +33,7 @@ function App()  {
       <Route exact path='/formulario-de-compra' element={<SendOrder />} />
       < Route exact path="product/:id" element={<ItemDetailContainer />} />
       <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
+      <Route exact path='/marca/:marca' element={<ItemListContainer />} />
       <Route exact path='/compra-finalizada' element={<CompraFinalizada />} />
       </Routes>
 

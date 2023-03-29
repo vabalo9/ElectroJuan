@@ -11,6 +11,7 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const[espera, setEspera] = useState(true)
   const { categoria } = useParams();
+  const { marca } = useParams();
 
 
 
@@ -27,8 +28,11 @@ const ItemListContainer = () => {
       });
     }, [])
 
-    const filtrado= productos.filter((producto)=>producto.categoria===categoria)
-
+    const filtroCategorias= productos.filter((producto)=>producto.categoria===categoria)
+    const filtroMarcas= productos.filter((producto)=>producto.marca==marca)
+    console.log(productos.map((doc)=>doc.marca))
+    console.log(marca)
+    console.log(categoria)
 
 
     
@@ -37,9 +41,14 @@ const ItemListContainer = () => {
     return <Example />
    }
 
+   if (marca) {
+    return <ItemList productos={filtroMarcas} />
+   }
+
 return <>
       <h3 className="titulo-productos">{categoria}</h3>
-      {categoria ? <ItemList productos={filtrado} /> : <ItemList productos={productos} />}
+       {categoria ? <ItemList productos={filtroCategorias} /> : <ItemList productos={productos} />}
+      
    
     </>
 }

@@ -451,3 +451,18 @@
     text-decoration: underline;
    }
  
+
+   .categorias {
+     font-size: 30px;
+     background-color: var(--principal-bg-color)!important; 
+    }
+    
+    .css-kjvu41 {
+      background-color: var(--principal-bg-color)!important;  
+      
+   }
+
+   .chakra-menu__menu-button {
+    background-color: var(--principal-bg-color)!important;  
+
+   }
