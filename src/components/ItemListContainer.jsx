@@ -12,6 +12,8 @@ const ItemListContainer = () => {
   const[espera, setEspera] = useState(true)
   const { categoria } = useParams();
   const { marca } = useParams();
+  const [vidriera, setVidriera] = useState([])
+
 
 
 
@@ -28,26 +30,33 @@ const ItemListContainer = () => {
       });
     }, [])
 
+   
+    
     const filtroCategorias= productos.filter((producto)=>producto.categoria===categoria)
     const filtroMarcas= productos.filter((producto)=>producto.marca==marca)
-    console.log(productos.map((doc)=>doc.marca))
-    console.log(marca)
-    console.log(categoria)
-
-
     
+    useEffect(() =>{
+      productos
+    },)
 
   if (espera) {
     return <Example />
    }
 
-   if (marca) {
-    return <ItemList productos={filtroMarcas} />
+   if (categoria) {
+    setVidriera(filtroCategorias)
+   }else if (marca) {
+      setVidriera(filtroMarcas)
+   }else {
+    setVidriera(productos)
    }
+  
+
 
 return <>
       <h3 className="titulo-productos">{categoria}</h3>
-       {categoria ? <ItemList productos={filtroCategorias} /> : <ItemList productos={productos} />}
+      <h3 className="titulo-productos">{marca}</h3>
+       {<ItemList productos={vidriera} />}
       
    
     </>
