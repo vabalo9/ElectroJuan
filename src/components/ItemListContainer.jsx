@@ -3,23 +3,27 @@ import ItemList from "./ItemList";
 import {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Example from './ComponenteDeEspera'
-import {collection, getDocs, getFirestore} from "firebase/firestore"
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 
 
 const ItemListContainer = () => {
 
   const [productos, setProductos] = useState([])
   const[espera, setEspera] = useState(true)
+  const [titulo, setTitulo] =useState("")
   const { categoria } = useParams();
   const { marca } = useParams();
-  const [vidriera, setVidriera] = useState([])
-
 
 
 
     useEffect(() =>{
         const db = getFirestore();
-        const itemsCollection = collection(db, "tecnologia");
+        const itemsCollection = categoria 
+        ? query(collection(db, "tecnologia"), where('categoria','==',categoria)) 
+        : marca 
+        ? query(collection(db, "tecnologia"), where('marca','==',marca))
+        : query(collection(db, "tecnologia"), where('oferta', '==', true))
+        marca ? setTitulo(`Estos son nuestros productos de ${marca}`) : setTitulo(categoria)
         getDocs(itemsCollection).then((snapshot)=>{ 
         const productos = snapshot.docs.map((doc)=>({
         ...doc.data(),
@@ -28,35 +32,22 @@ const ItemListContainer = () => {
         setProductos(productos);
         setEspera(false);
       });
-    }, [])
+    }, [categoria, marca])
 
-   
+
     
-    const filtroCategorias= productos.filter((producto)=>producto.categoria===categoria)
-    const filtroMarcas= productos.filter((producto)=>producto.marca==marca)
     
-    useEffect(() =>{
-      productos
-    },)
 
   if (espera) {
     return <Example />
    }
 
-   if (categoria) {
-    setVidriera(filtroCategorias)
-   }else if (marca) {
-      setVidriera(filtroMarcas)
-   }else {
-    setVidriera(productos)
-   }
-  
-
+ 
 
 return <>
-      <h3 className="titulo-productos">{categoria}</h3>
-      <h3 className="titulo-productos">{marca}</h3>
-       {<ItemList productos={vidriera} />}
+      <h3 className="titulo-productos">{titulo}</h3>
+      
+        <ItemList productos={productos} />
       
    
     </>

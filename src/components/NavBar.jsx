@@ -9,56 +9,68 @@ const NavBar = () => {
     
 
     return (
-         <div className="navbar">
+    <div className="navbar">
 
-             <Link to={`/`}>
-             <h1 className="logo">TecnoJuan</h1>
-             </Link>
-        <div>
-            <Menu>
-              <MenuButton className="categorias">Categorias</MenuButton>
-              <Portal>
-                <MenuList>
-                  <MenuItem>
-                    <Link to={`/categoria/${"Smartphones"}`}>
-                        <li className="items">Smartphones</li>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to={`/categoria/${"Notebooks"}`}>
-                        <li className="items">Notebooks</li>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to={`/categoria/${"Watches"}`}> 
-                        <li className="items">Watches</li>
-                    </Link>
-                  </MenuItem>
-                </MenuList>
-              </Portal>
-            </Menu>
+      <Link to={`/`}>
+        <h1 className="logo">TecnoJuan</h1>
+      </Link>
 
-            <Menu>
-              <MenuButton className="categorias">Marcas</MenuButton>
-              <Portal>
-                <MenuList>
-                  <MenuItem>
-                    <Link to={`/marca/${"apple"}`}>
-                        <li className="items">Apple</li>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <Link to={`/marca/${"samsung"}`}>
-                        <li className="items">Samsung</li>
-                    </Link>
-                  </MenuItem>
-                </MenuList>
-              </Portal>
-            </Menu>
-            </div>
+
+      <div className="divisiones">
+        <Menu>
+          <MenuButton className="categorias"><span className="fondo">Categorias</span></MenuButton>
+          <Portal>
+            <MenuList>
+              <MenuItem>
+                <Link to={`/categoria/${"Smartphones"}`}>
+                    <li className="items">Smartphones</li>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={`/categoria/${"Notebooks"}`}>
+                    <li className="items">Notebooks</li>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={`/categoria/${"Watches"}`}> 
+                    <li className="items">Watches</li>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={`/categoria/${"Graficas"}`}> 
+                    <li className="items">Graficas</li>
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Portal>
+        </Menu>
+
+        <Menu>
+          <MenuButton className="categorias"><span className="fondo">Marcas</span></MenuButton>
+          <Portal>
+            <MenuList>
+              <MenuItem>
+                <Link to={`/marca/${"Apple"}`}>
+                    <li className="items">Apple</li>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={`/marca/${"Samsung"}`}>
+                    <li className="items">Samsung</li>
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to={`/marca/${"Nvidia"}`}>
+                    <li className="items">Nvidia</li>
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Portal>
+        </Menu>
+      </div>
              
-              <CardWidget /> 
-        </div>
+      <CardWidget /> 
+    </div>
         
     )
 };

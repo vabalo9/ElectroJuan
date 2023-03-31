@@ -9,8 +9,10 @@
   padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--color-fondo); 
+    background-color: var(--color-fondo);  
   }
+
+
 
   
   .navbar {
@@ -400,17 +402,23 @@
 
    }
 
+   .div-boton-nexo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   }
 
    .boton-nexo {
      display: flex;
      align-items: center;
      justify-content: center;
      border-radius: 4px;
-     margin-inline: 500px;
      margin-top: 50px;
      font-size: 25px;
-     width: 500px;
-     padding: 10px;
+     padding-inline: 300px;
+     padding-block: 20px;
+     
      color:var(--principal-bg-color) ;
      background-color: var(--color-fondo);
      border: 1px solid var(--principal-bg-color);
@@ -453,16 +461,29 @@
  
 
    .categorias {
-     font-size: 30px;
-     background-color: var(--principal-bg-color)!important; 
+     font-size: 30px; 
     }
     
-    .css-kjvu41 {
-      background-color: var(--principal-bg-color)!important;  
-      
-   }
+  
+  .fondo{
+  background-color: var(--principal-bg-color);
+  padding-block: 10px;
+}
 
-   .chakra-menu__menu-button {
-    background-color: var(--principal-bg-color)!important;  
 
-   }
+.divisiones {
+  background-color: var(--principal-bg-color);
+  display: flex;
+  gap: 100px;
+}
+
+.chakra-menu__menu-list {
+  list-style-type: none;
+}
+
+
+.items {
+  background-color: white;
+  color: var(--color-fondo);
+}
+

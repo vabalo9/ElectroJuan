@@ -1,6 +1,8 @@
 # ElectroJuan 
 ## Proyecto de React.js de Valentín Abalo para CoderHouse
 
-El proyecto trata sobre un ecommerce de productos electronicos como celulares, tablets y computadoras, hasta el momento se añadieron unicamente 3 productos pero cuado subamos los datos al servidor la idea es que tenga algunos más 
+El proyecto trata sobre un ecommerce que sobre articulos en general de electronica, tanto notebooks como smartphones y demás objetos de la misma indole.
+
+
 
 ![gif](Vite___React_-_Google_Chrome_2023-03-09_18-22-18_AdobeExpress.gif)
