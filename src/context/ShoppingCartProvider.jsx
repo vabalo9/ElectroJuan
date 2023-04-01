@@ -23,7 +23,7 @@ const ShoppingCartProvider = ({ children }) => {
       carrito.push(item)
       
     } else {
-      alert("Este producto ya se encuentra entre tus elegidos, si deseas mas unidades de este producto puedes indicarlo directamente en el carrito ")
+      Swal.fire('Este producto ya se encuentra entre tus elegidos, si deseas mas unidades puedes indicarlo directamente en el carrito')
     }
     
     setCompra("Añadido al carrito!")
@@ -43,7 +43,7 @@ const ShoppingCartProvider = ({ children }) => {
       }
       
     }else {
-      alert("llegaste al maximo de unidades que tenemos en stock")
+      Swal.fire('llegaste al maximo de unidades que tenemos en stock')
     }
     
 
@@ -64,7 +64,7 @@ const ShoppingCartProvider = ({ children }) => {
       }
       
     }else {
-      alert("Para eliminar totalmente un producto hace click en la papelera")
+      Swal.fire('Para eliminar un producto definitivamente hace click en la papelera')
     }
     setCarrito([...carrito])
   }

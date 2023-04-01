@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
 :root {
-  --principal-bg-color: rgb(17, 209, 181);
-  --color-fondo:rgb(49, 47, 47)
+   --principal-bg-color: rgb(17, 209, 181); 
+    --color-fondo:rgb(49, 47, 47)
 }
 
 * {
@@ -487,3 +487,26 @@
   color: var(--color-fondo);
 }
 
+.swal2-title {
+  color: var(--principal-bg-color) !important;
+}
+
+.swal2-confirm{
+  background-color: var(--principal-bg-color) !important;
+  color: var(--color-fondo)!important;
+}
+
+
+
+.swal2-styled {
+  color: var(--color-fondo) !important;
+}
+.swal2-popup {
+  background-color: var(--color-fondo) !important;
+  border: 3px solid var(--principal-bg-color);
+} 
+
+
+.swal2-styled.swal2-confirm  {
+background-color: var(--principal-bg-color)!important;
+}

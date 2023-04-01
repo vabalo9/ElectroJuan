@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import {CartContext} from '../context/ShoppingCartProvider'
 
 
+
 const Contador = ({id, imagen, precio, nombre, stock}) => {
 const {añadirCarrito, carrito} = useContext(CartContext);
 const [unidades, setUnidades]= useState(1)
@@ -12,7 +13,14 @@ const sumando = () => {
   if (unidades < stock) {
     setUnidades(unidades +1 )
   } else {
-    alert("llegaste a las unidades maximas que tenemos en stock")
+    Swal.fire('No contamos con mas stock en este producto')
+    
+
+    useEffect(() =>{
+      if (comprado) {setCompra("Producto añadido!")}
+      
+    });
+    
   }
 }
 
@@ -24,10 +32,9 @@ const restando = () => {
 
 const comprado= carrito.some((prod)=>prod.id==id)
 
-useEffect(() =>{
-  if (comprado) {setCompra("Producto añadido!")}
+
   
-});
+
 
 return (
   <>
