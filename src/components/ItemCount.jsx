@@ -7,7 +7,7 @@ import {CartContext} from '../context/ShoppingCartProvider'
 const Contador = ({id, imagen, precio, nombre, stock}) => {
 const {añadirCarrito, carrito} = useContext(CartContext);
 const [unidades, setUnidades]= useState(1)
-const [compra, setCompra]= useState("Añadir al carrito")
+const [compra, setCompra]= useState("")
 
 const sumando = () => {
   if (unidades < stock) {
@@ -18,6 +18,9 @@ const sumando = () => {
 
     useEffect(() =>{
       if (comprado) {setCompra("Producto añadido!")}
+      else {
+        setCompra("Añadir al carrito")
+      }
       
     });
     

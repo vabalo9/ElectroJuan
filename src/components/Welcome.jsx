@@ -1,5 +1,4 @@
 import React from 'react'
-import Example from './ComponenteDeEspera'
 import ItemListContainer from './ItemListContainer'
 
 const Welcome = ({greeting}) => {
