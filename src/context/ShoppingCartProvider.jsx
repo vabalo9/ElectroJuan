@@ -1,4 +1,4 @@
-import {createContext, useState, useEffect } from "react"
+import {createContext, useState,} from "react"
 
 export const CartContext = createContext("")
 
@@ -6,19 +6,12 @@ export const CartContext = createContext("")
 
 const ShoppingCartProvider = ({ children }) => {
 
-  const [carrito, setCarrito] = useState([])
 
+
+  let [carrito, setCarrito] = useState([])
 
   
   
-  
-  useEffect(() =>{
-    if (localStorage.getItem("carrito")) {setCarrito( JSON.parse(localStorage.getItem("carrito")))}
-    
-  },[]);
-  
-
-
   
   const [compra, setCompra] = useState("Añadir al carrito")
   
@@ -28,8 +21,6 @@ const ShoppingCartProvider = ({ children }) => {
       const item={id:id, img:imagen, precio:precio, nombre:nombre, unidades:unidades, total:unidades*precio, stock:stock}
       setCarrito([...carrito, item])
       carrito.push(item)
-      let carritoJSON = JSON.stringify(carrito)
-      localStorage.setItem("carrito", carritoJSON)
       
     } else {
       Swal.fire('Este producto ya se encuentra entre tus elegidos, si deseas mas unidades puedes indicarlo directamente en el carrito')
@@ -50,9 +41,6 @@ const ShoppingCartProvider = ({ children }) => {
       carrito[posicionProducto] = {
         id: carrito[posicionProducto].id, stock: carrito[posicionProducto].stock, img: carrito[posicionProducto].img, nombre: carrito[posicionProducto].nombre, precio: carrito[posicionProducto].precio, unidades: carrito[posicionProducto].unidades + 1, total: carrito[posicionProducto].precio * (carrito[posicionProducto].unidades + 1)
       }
-
-      let carritoJSON = JSON.stringify(carrito)
-      localStorage.setItem("carrito", carritoJSON)
       
     }else {
       Swal.fire('llegaste al maximo de unidades que tenemos en stock')
@@ -74,9 +62,6 @@ const ShoppingCartProvider = ({ children }) => {
       carrito[posicionProducto] = {
         id: carrito[posicionProducto].id, stock: carrito[posicionProducto].stock, img: carrito[posicionProducto].img, nombre: carrito[posicionProducto].nombre, precio: carrito[posicionProducto].precio, unidades: carrito[posicionProducto].unidades - 1, total: carrito[posicionProducto].precio * (carrito[posicionProducto].unidades - 1)
       }
-
-      let carritoJSON = JSON.stringify(carrito)
-      localStorage.setItem("carrito", carritoJSON)
       
     }else {
       Swal.fire('Para eliminar un producto definitivamente hace click en la papelera')
@@ -87,9 +72,6 @@ const ShoppingCartProvider = ({ children }) => {
   function eliminarProducto(id) {
     carrito = carrito.filter(prod => prod.id !=  id)
     setCarrito([...carrito])
-
-    let carritoJSON = JSON.stringify(carrito)
-    localStorage.setItem("carrito", carritoJSON)
   }
   
   const cantidad = carrito.reduce((acc, producto) => acc + producto.unidades, 0)

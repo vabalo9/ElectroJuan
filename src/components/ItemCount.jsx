@@ -7,7 +7,7 @@ import {CartContext} from '../context/ShoppingCartProvider'
 const Contador = ({id, imagen, precio, nombre, stock}) => {
 const {añadirCarrito, carrito} = useContext(CartContext);
 const [unidades, setUnidades]= useState(1)
-const [compra, setCompra]= useState("")
+const [compra, setCompra]= useState("Añadir al carrito")
 
 const sumando = () => {
   if (unidades < stock) {
@@ -16,13 +16,6 @@ const sumando = () => {
     Swal.fire('No contamos con mas stock en este producto')
     
 
-    useEffect(() =>{
-      if (comprado) {setCompra("Producto añadido!")}
-      else {
-        setCompra("Añadir al carrito")
-      }
-      
-    });
     
   }
 }
@@ -35,6 +28,10 @@ const restando = () => {
 
 const comprado= carrito.some((prod)=>prod.id==id)
 
+useEffect(() =>{
+  if (comprado) {setCompra("Producto añadido!")}
+  
+});
 
   
 
