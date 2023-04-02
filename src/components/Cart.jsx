@@ -17,8 +17,8 @@ const Cart = () => {
         <div className='palabras-iconos'>
           <div className='contenido-cart'>
             <h1 className='color'>Cantidad: {prod.unidades}</h1>
-            <h1 className='color'>Precio: ${prod.precio}</h1>
-            <h4 className='color'>Valor total: ${prod.total}</h4>
+            <h1 className='color'>Precio: ${(new Intl.NumberFormat('de-DE').format(prod.precio))}</h1>
+            <h4 className='color'>Valor total: ${(new Intl.NumberFormat('de-DE').format(prod.total))}</h4>
           </div>
           <div className='botones-carrito'>
             <button className='boton-contador' onClick={()=> sumarEnCarrito(prod.id, prod.stock)}><i className="bi bi-plus-lg"></i></button> 
@@ -33,7 +33,7 @@ const Cart = () => {
       })  } 
       <div className='totales'>
         <h4 className='cantidad-carrito'>Cantidad de productos: {cantidad}</h4>
-        <h4 className='cantidad-carrito'> Total: $ {totales}</h4>
+        <h4 className='cantidad-carrito'> Total: $ {(new Intl.NumberFormat('de-DE').format(totales))}</h4>
       </div>
       <div className='div-boton-nexo'>
         <Link to={`/formulario-de-compra`}>

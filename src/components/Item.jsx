@@ -18,7 +18,7 @@ const Item = ({id, imagen, descripcion, precio, nombre}) => {
           {descripcion}
           </Text>
           <Text className="card-price" fontSize='2xl'>
-            ${precio}
+            ${(new Intl.NumberFormat('de-DE').format(precio))}
           </Text>
         </Stack>
       </CardBody>

@@ -17,7 +17,7 @@ const ItemDetail = ({ id, imagen, descripcion, precio, nombre, stock}) => {
                     <h1 className='titulo-ItemDetail'>{nombre}</h1>
                     <p className='descripcion-ItemDetail'>{descripcion}</p>
                   </div>
-                  <h3 className='precio-ItemDetail'>${precio}</h3>
+                  <h3 className='precio-ItemDetail'>${(new Intl.NumberFormat('de-DE').format(precio))}</h3>
                   < ItemCount 
                       
                       id={id}
