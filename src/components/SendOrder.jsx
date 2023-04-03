@@ -60,7 +60,7 @@ const orderCollection = collection(db, "orden")
             <input className="register" required type="text" placeholder='ingrese su apellido' onChange={(e)=> setApellido(e.target.value)}/>
             <input className="register" required type="number" placeholder='ingrese su telefono' onChange={(e)=> setTelefono(e.target.value)}/>
             <input className="register" required type="email" placeholder='ingrese su email' onChange={(e)=> setEmail1(e.target.value)} />
-            <input className="register" required type="email" placeholder='ingrese su email nuevamente' onChange={corroboracion}/>
+            <input className="register" required type="email" placeholder='ingrese su email nuevamente' onBlur={corroboracion}/>
             <button className="boton-finalizador efecto" type='submit' >Realizar compra</button>
             
         </form>
