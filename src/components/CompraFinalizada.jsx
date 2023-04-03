@@ -9,7 +9,7 @@ const CompraFinalizada = ({orderId}) => {
   return (
     <div>
       <h1 className='parrafo-final'>
-        felicidades has realizado correctamente la compra! <i className="bi bi-emoji-smile-fill"></i> <br></br>
+        Muchas gracias por tu compra! <i className="bi bi-emoji-smile-fill"></i> <br></br>
         tu número de seguimiento es <span className='codigo-final'>{orderId}</span>
       </h1>
 
